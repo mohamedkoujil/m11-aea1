@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="exercicisFuncions.js"></script>
+    <script src="todoList.js"></script>
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .container {
+        -webkit-box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.28);
+        -moz-box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.28);
+        box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.28);
+        padding: 1em;
+        border-radius: 10px;
+      }
+
+      .container h3 {
+        margin: 0.5em;
+      }
+
+      .task {
+        margin-bottom: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        display: flex;
+        padding: 8px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      button {
+        border: none;
+        border-radius: 5px;
+        padding: 8px;
+      }
+
+      .task button {
+        background-color: rgb(245, 98, 98);
+        color: white;
+      }
+
+      .task button:hover {
+        background-color: rgba(182, 4, 4, 0.753);
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: rgb(72, 255, 0);
+        cursor: grab;
+      }
+
+      input {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body class="animate__animated animate__fadeIn">
+    <div class="container">
+      <h3>Funcions</h3>
+      <button onclick="{comparaNumeros(1,2), showResult(comparaNumeros)}">
+        Fun1
+      </button>
+      <button onclick="{suma1a100(), showResult(suma1a100)}">Fun2</button>
+      <button onclick="{PedraPaper(), showResult(PedraPaper)}">Fun3</button>
+      <button onclick="esParell(2), showResult(esParell)">Fun4</button>
+      <button onclick="revertirCadena('Cadena'), showResult(PedraPaper)">
+        Fun5
+      </button>
+      <button onclick="factorial(10), showResult(factorial)">Fun6</button>
+      <button
+        onclick="filtrarPositius([-1,-2,3,4]), showResult(filtrarPositius)"
+      >
+        Fun7
+      </button>
+
+      <pre id="result" class="animate__animated animate__bounce"></pre>
+
+      <h3>Todo List</h3>
+
+      <form id="addTaskForm" onsubmit="handleForm(event)">
+        <input id="addTask" placeholder="Afegir Tasca" required />
+        <button type="submit">Afegir</button>
+        <button type="button" onclick="handleShowTasks()">
+          Mostrar/Ocultar
+        </button>
+      </form>
+
+      <div id="tasks"></div>
+    </div>
+  </body>
+</html>
